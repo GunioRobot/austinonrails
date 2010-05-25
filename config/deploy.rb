@@ -36,7 +36,7 @@ namespace :deploy do
 end
 
 
-set :bundle_path, "/home/twelvelabs/.gems/bin/bundle"
+set :bundle_path, "/home/#{user}/.gems/bin/bundle"
 
 namespace :bundler do
   task :create_symlink, :roles => :app, :except => { :no_release => true } do
