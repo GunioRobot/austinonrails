@@ -33,6 +33,18 @@ rails server
 open http://localhost:3000/
 
 
+# setup your github key (if needed)
+cat ~/.ssh/id_rsa.pub | pbcopy
+open https://github.com/account
+# create the repo
+open http://github.com/repositories/new
+# import the app
+git init
+git add .
+git commit -m "initial import"
+git push origin git@github.com:twelvelabs/austinonrails.git
+
+
 
 == 2. Setup the domain
 
@@ -78,7 +90,7 @@ gem install bundler
 
 
 
-4. Setup capistrano
+== 4. Setup capistrano
 
 cd ~/tmp/austinonrails
 capify .
@@ -95,6 +107,22 @@ cap deploy:migrations
 
 
 
+== 5. Further reading
+
+# using bundler
+http://gembundler.com/
+# general dreamhost rails/gems info
+http://wiki.dreamhost.com/Rails
+http://wiki.dreamhost.com/RubyGems
+# getting passenger to recognize a custom gem path
+http://blog.phusion.nl/2008/12/16/passing-environment-variables-to-ruby-from-phusion-passenger/
+# setting up public keys
+http://sial.org/howto/openssh/publickey-auth/
+# capistrano info
+http://www.capify.org/index.php/Documentation
+# using git and capistrano together
+http://github.com/guides/git-cheat-sheet
+http://github.com/guides/deploying-with-capistrano
 
 
 
