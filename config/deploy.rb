@@ -28,7 +28,7 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
   end
-  
+
   [:start, :stop].each do |t|
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
@@ -44,16 +44,16 @@ namespace :bundler do
     release_dir = File.join(current_release, '.bundle')
     run "mkdir -p #{shared_dir} && ln -s #{shared_dir} #{release_dir}"
   end
-  
+
   task :bundle_new_release, :roles => :app, :except => { :no_release => true } do
     bundler.create_symlink
     run "cd #{release_path} && #{bundle_path} install --without test"
   end
-  
+
   task :lock, :roles => :app, :except => { :no_release => true } do
     run "cd #{current_release} && #{bundle_path} lock;"
   end
-  
+
   task :unlock, :roles => :app, :except => { :no_release => true } do
     run "cd #{current_release} && #{bundle_path} unlock;"
   end

@@ -5,7 +5,7 @@ rails ~/tmp/austinonrails
 cd ~/tmp/austinonrails
 # create a simple controller so that we can test hitting the Rails stack
 rails g controller Welcome index
-# 
+#
 mate .
 
 # ./config/routes.rb: uncomment the root route (so we don't have to specify a path when testing)
@@ -74,7 +74,7 @@ rm -R austinonrails.twelvelabs.com/current
 # lets check the versions of ruby and ruby gems
 # ruby needs to be >= 1.8.7... file support ticket to move to newer server if it's not
 # rubygems needs to be >= 1.3.6... it most likely isn't so you'll need to install it in your home dir
-ruby -v 
+ruby -v
 gem -v
 
 # typing is lame! (note: you need to copy these over to the server before running them)
